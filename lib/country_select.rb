@@ -57,7 +57,7 @@ module ActionView
         "Bhutan" => "bt",
         "Bolivia, Plurinational State of" => "bo",
         "Bonaire, Sint Eustatius and Saba" => "bq",
-        "Bosnia and Herzegowina" => "ba",
+        "Bosnia and Herzegovina" => "ba",
         "Botswana" => "bw",
         "Bouvet Island" => "bv",
         "Brazil" => "br",
