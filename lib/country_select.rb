@@ -27,6 +27,7 @@ module ActionView
 
         return country_options + options_for_select(COUNTRIES, selected)
       end
+
       # All the countries included in the country_options output.
       COUNTRIES = {
         "Afghanistan" => "af",
@@ -278,6 +279,18 @@ module ActionView
         "Yemen" => "ye",
         "Zambia" => "zm",
         "Zimbabwe" => "zw"} unless const_defined?("COUNTRIES")
+
+      def country_codes
+        @@country_codes ||= COUNTRIES.values
+      end
+
+      def country_name_from_code(code)
+        COUNTRIES.key(code.to_s)
+      end
+
+      def country_code_from_name(name)
+        COUNTRIES[name.to_s]
+      end
     end
 
     class InstanceTag
