@@ -25,7 +25,9 @@ module ActionView
           selected=nil if priority_countries.include?(selected)
         end
 
-        return country_options + options_for_select(COUNTRIES.map { |c| [I18n.t(c[1].upcase, :scope => :countries), c[1]] }, selected)
+        localized_countries = COUNTRIES.map { |c| [I18n.t(c[1].upcase, :scope => :countries), c[1]] }.sort { |a,b| a[0] <=> b[0] }
+
+        return country_options + options_for_select(localized_countries, selected)
       end
 
       # All the countries included in the country_options output.
